@@ -47,8 +47,9 @@
 
 
 <style>
-.t{{ slide.photo.id }} {
-background: url(http://localhost{{ asset(slide.fond.webPath) }});
+.t{{ slide.photo.id }}{
+
+background: url( {{ host }}/{{ slide.fond.getWebPath }} );
 min-height: 350px;
 background-size: cover;
 background-position: center center;

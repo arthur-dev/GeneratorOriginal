@@ -27,6 +27,8 @@
 
 <body>
 
+
+
 <!-- Fixed navbar -->
 <div class="navbar-fixed-top" role="navigation" id="header">
     <div class="container">
@@ -69,13 +71,13 @@
         <div class="col-md-4"></div>
         <div class="col-md-4 textcenter whitetext">
             <p><br><br><br><br><br><br><br>
-                <img class=" img_center img-responsive img-front" src="{{ asset('uploads/img/generateur/'~page.logo.id~'.'~page.logo.url) }}">
+                  <img class=" img_center img-responsive img-front" src="{{ asset( page.logo.getWebPath ) }}">
 
             <p class="textcenter">
 
 
             <h1 class="white">{{  page.name }}</h1>
-            <br><br><h3 class="white">{{ page.baseline }}</h3>
+            <br><br><h3 class="white">{{ page.baseline | raw }}</h3>
 
             </p><br>
            {#
@@ -132,7 +134,9 @@
 <style>
 
     .homie {
-        background: url(http://localhost{{ asset('uploads/img/generateur/'~page.homie.id~'.'~page.homie.url) }});
+        /*background: url( http://localhost{#}{{ asset('uploads/img/generateur/'~page.homie.id~'.'~page.homie.url) }}#} );
+       */
+        background: url( {{ host }}/{{ page.homie.getWebPath }} );
         min-height: 700px;
         margin-top: -20px;
         background-size: cover;

@@ -10,6 +10,8 @@ class DefaultController extends Controller
     {
         $pages=$this->getDoctrine()->getRepository('GenerateurBundle:Page')->findAll();
 
+
+
         return $this->render('GenerateurBundle:Default:index.html.twig', array(
             'pages'=>$pages
         ));

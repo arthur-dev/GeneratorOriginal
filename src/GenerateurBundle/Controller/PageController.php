@@ -270,13 +270,15 @@ class PageController extends Controller
 
         $r= $this->getparam($id);
 
+        $host=$this->container->getParameter('host');
 
         return $this->render('GenerateurBundle:Page:viewpage.html.twig', array(
             'page' => $r['page'],
             'slides'=>$r['render'],
             'title'=>$r['title'],
             'link'=>$r['link'],
-            'idslide'=>$r['idslide']
+            'idslide'=>$r['idslide'],
+            'host'=> $host,
         ));
     }
 
@@ -391,6 +393,9 @@ class PageController extends Controller
 
     private function getparam($id)
     {
+
+        $host=$this->container->getParameter('host');
+
         $em=$this->getDoctrine()->getManager()->getRepository('GenerateurBundle\Entity\Page');
         $page=$em->find($id);
 
@@ -410,7 +415,8 @@ class PageController extends Controller
             if ($slide instanceof Stype1)
             {
                 $render[]=$this->render('GenerateurBundle:Slide:viewstype1.html.twig', array(
-                    'slide'=>$slide
+                    'slide'=>$slide,
+                    'host'=> $host,
                 ))->getContent();
                 $title[]=$slide->getName();
                 $link[]=$slide->getId();
@@ -421,7 +427,8 @@ class PageController extends Controller
             if ($slide instanceof Stype2)
             {
                 $render[]=$this->render('GenerateurBundle:Slide:viewstype2.html.twig', array(
-                    'slide'=>$slide
+                    'slide'=>$slide,
+                    'host'=> $host,
                 ))->getContent();
 
                 $title[]=$slide->getName();
@@ -433,7 +440,8 @@ class PageController extends Controller
             if ($slide instanceof Stype3)
             {
                 $render[]=$this->render('GenerateurBundle:Slide:viewstype3.html.twig', array(
-                    'slide'=>$slide
+                    'slide'=>$slide,
+                    'host'=> $host,
                 ))->getContent();
 
                 $title[]=$slide->getName();
@@ -445,7 +453,8 @@ class PageController extends Controller
             if ($slide instanceof Stype4)
             {
                 $render[]=$this->render('GenerateurBundle:Slide:viewstype4.html.twig', array(
-                    'slide'=>$slide
+                    'slide'=>$slide,
+                    'host'=> $host,
                 ))->getContent();
 
                 $title[]=$slide->getName();
@@ -457,7 +466,8 @@ class PageController extends Controller
             if ($slide instanceof Stype5)
             {
                 $render[]=$this->render('GenerateurBundle:Slide:viewstype5.html.twig', array(
-                    'slide'=>$slide
+                    'slide'=>$slide,
+                    'host'=> $host,
                 ))->getContent();
 
                 $title[]=$slide->getName();
@@ -469,7 +479,8 @@ class PageController extends Controller
             if ($slide instanceof Stype6)
             {
                 $render[]=$this->render('GenerateurBundle:Slide:viewstype6.html.twig', array(
-                    'slide'=>$slide
+                    'slide'=>$slide,
+                    'host'=> $host,
                 ))->getContent();
 
                 $title[]=$slide->getName();
@@ -481,7 +492,8 @@ class PageController extends Controller
             if ($slide instanceof Stype7)
             {
                 $render[]=$this->render('GenerateurBundle:Slide:viewstype7.html.twig', array(
-                    'slide'=>$slide
+                    'slide'=>$slide,
+                    'host'=> $host,
                 ))->getContent();
 
                 $title[]=$slide->getName();
@@ -494,7 +506,8 @@ class PageController extends Controller
             if ($slide instanceof Stype8)
             {
                 $render[]=$this->render('GenerateurBundle:Slide:viewstype8.html.twig', array(
-                    'slide'=>$slide
+                    'slide'=>$slide,
+                    'host'=> $host,
                 ))->getContent();
 
                 $title[]=$slide->getName();

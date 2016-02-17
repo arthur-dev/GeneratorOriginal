@@ -17,7 +17,9 @@ class PageType extends AbstractType
     {
         $builder
             ->add('name','text',array('label'=>'Name'))
-            ->add('baseline','text',array('label'=>'Baseline'))
+            ->add('baseline', 'ckeditor', array(
+                'config_name' => 'my_config',
+            ))
             ->add('logo',new picture(),array('label'=>'Logo'))
             ->add('homie',new picture(),array('label'=>'Background picture welcome page'))
             ->add('Save',      'submit',array('label'=>'Save','attr' => array('class' => 'btn btn-success btn-group-justified'),))
