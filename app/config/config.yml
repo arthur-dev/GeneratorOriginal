@@ -82,8 +82,8 @@ swiftmailer:
 ivory_ck_editor:
     configs:
         my_config:
-  #          toolbar:                [ [ "Source", "-", "Save","Preview" ],['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'],['NumberedList', 'BulletedList'] ]
-            toolbar: full
+            toolbar:                [ [ "Source", "-", "Save","Preview" ],['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat'],['NumberedList', 'BulletedList','JustifyLeft','JustifyCenter','JustifyRight'] ]
+  #          toolbar: full
             uiColor:                "#ffffff"
             #filebrowserUploadRoute: "my_route"
             #extraPlugins:           "wordcount"
