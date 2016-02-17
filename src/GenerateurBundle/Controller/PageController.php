@@ -258,9 +258,12 @@ class PageController extends Controller
             return $this->editPageAction($page->getId());
         }
 
+        $host=$this->container->getParameter('host');
+
         return $this->render('GenerateurBundle:Page:modifypage.html.twig', array(
             'form' => $form->createView(),
-            'page'=>$page
+            'page'=>$page,
+            'host'=>$host,
 
         ));
     }
