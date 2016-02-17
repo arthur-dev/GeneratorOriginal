@@ -14,13 +14,8 @@
     <link rel="stylesheet" href={{ asset('public/css/bootstrap.css') }} >
     <link rel="stylesheet" href={{ asset('public/css/styleonepage.css') }} >
 
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -40,9 +35,9 @@
         </div>
         <div class="navbar-collapse navbar-default collapse">
             <ul class="nav navbar-nav">
-                <li><a data-scroll href=""><img style="width:90px;" src="{{ asset('bundles/chaireaccueil/images/logo_chairEEE_header.png') }}" width="210" ></a></li>
-                <li><a data-scroll href="#top"><img style="max-width:150px; max-height: 50px;" src="{{ asset('uploads/img/generateur/'~page.logo.id~'.'~page.logo.url) }}"  ></a></li>
-
+                {#}<li><a data-scroll href=""><img style="width:90px;" src="{{ asset('bundles/chaireaccueil/images/logo_chairEEE_header.png') }}" width="210" ></a></li>#}
+                <li><a data-scroll href="#top"><img style="max-width:150px; max-height: 50px; " src="{{ asset('uploads/img/generateur/'~page.logo.id~'.'~page.logo.url) }}"  ></a></li>
+                <li><h3>{{ page.name }}</h3></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
 
@@ -88,16 +83,34 @@
 
 {% block slide %}
 
-{%  for slide in slides %}
-    {{ slide|raw  }}
-{% endfor %}
+    {%  for slide in slides %}
+        {{ slide|raw  }}
+    {% endfor %}
 
 {% endblock slide %}
 
 
 <div class="footer">
     <div class="container">
-        <div class="row"><div class="col-md-1">powered by <a href="http://www.chaireeee.eu" target="_blank"></div><div class="col-md-4"><img src="Logo_ChaireEEE_2013-04.png" class="img-responsive"></a></div><div class="col-md-4"></div>  <div class="col-md-3"> <a href="http://www.nrdwnc.fr"></a>  <a href="mailto:edemarolles@escpeurope.eu">Contact</a> - <a href="#">Back to top</a></div></div>
+        <div class="row">
+            <div class="col-md-1">powered by
+                <a href="http://www.chaireeee.eu" target="_blank">
+            </div>
+
+            <div class="col-md-4"> Arthur Moll
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="{{ path("generateur_edit_page",{'id':page.id}) }}"> Mode Edition </a>
+            </div>
+            <div class="col-md-3">
+                <a href="http://www.nrdwnc.fr">
+
+                </a>
+                <a href="mailto:arth.dev@gmail.com">Contact</a>
+                - <a href="#">Back to top</a>
+            </div>
+        </div>
     </div>
 </div>
 
