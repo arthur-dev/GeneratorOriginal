@@ -48,7 +48,7 @@
 
             <ul class="nav navbar-nav">
             {#    <li><a data-scroll href=""><img style="width:90px;" src="{{ asset('bundles/chaireaccueil/images/logo_chairEEE_header.png') }}" width="210" ></a></li>#}
-               <li><a data-scroll onclick="ScrollToElement('#header')"><img style="max-width:150px; max-height: 50px; " src="{{ asset('uploads/img/generateur/'~page.logo.id~'.'~page.logo.url) }}"  ></a></li>
+               <li><a data-scroll href="{{ path('generateur_welcome_page') }}" onclick="ScrollToElement('#header')"><img style="max-width:150px; max-height: 50px; " src="{{ asset('uploads/img/generateur/'~page.logo.id~'.'~page.logo.url) }}"  ></a></li>
                <li><h3>{{ page.name }}</h3></li>
            </ul>
 
