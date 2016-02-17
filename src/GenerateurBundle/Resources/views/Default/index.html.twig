@@ -1,0 +1,52 @@
+{% extends '::layout.html.twig' %}
+{% block menu %}
+    {%  include ':parts:navbaradmin.html.twig' %}
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="container-fluid">
+        <div style="padding-top:100px; " class="row ">
+<div class="col-md-offset-2 col-md-8">
+
+            <table style="width:100%">
+                <tr>
+                    <th>Page</th>
+                    <th>Voir page</th>
+                    <th>Modifier page</th>
+                </tr>
+
+
+            {% for page in pages %}
+                <tr>
+                    <td> {{ page.name }}</td>
+                    <td><a href="{{ path('generateur_view_page',{'id':page.id}) }}">Voir</a></td>
+                    <td><a  href="{{ path('generateur_edit_page',{'id':page.id}) }}">Modifier</a></td>
+                </tr>
+
+            {% endfor %}
+            </table>
+<br><br>
+    <p class="textcenter">
+    <a href="{{ path('generateur_add_page') }}" >Ajouter une page </a>
+    </p>
+</div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+

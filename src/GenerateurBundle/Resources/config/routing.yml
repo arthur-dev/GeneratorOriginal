@@ -1,6 +1,9 @@
-generateur_add_page:
-#    path:     /add/new/page
+generateur_welcome_page:
     path:     /
+    defaults: { _controller: GenerateurBundle:Default:index}
+
+generateur_add_page:
+    path:     /add/new/page
     defaults: { _controller: GenerateurBundle:Page:addnewPage}
 
 generateur_add_slide1_to_page:
