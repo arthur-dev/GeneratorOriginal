@@ -287,8 +287,7 @@ class PageController extends Controller
 
     public function editPageAction($id)
     {
-
-
+        $host=$this->container->getParameter('host');
        $r= $this->getparam($id);
 
 
@@ -298,7 +297,8 @@ class PageController extends Controller
             'title'=>$r['title'],
             'link'=>$r['link'],
             'idslide'=>$r['idslide'],
-            'ordre'=>$r['ordre']
+            'ordre'=>$r['ordre'],
+            'host'=> $host,
         ));
     }
 
