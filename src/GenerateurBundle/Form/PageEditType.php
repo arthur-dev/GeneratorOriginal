@@ -17,7 +17,9 @@ class PageEditType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('baseline')
+            ->add('baseline', 'ckeditor', array(
+                'config_name' => 'my_config',
+            ))
           //  ->add('logo',new picture())
           //  ->add('homie',new picture())
             ->add('save','submit')
