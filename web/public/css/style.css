@@ -20,7 +20,13 @@
 
 body{
     font-family:"DINPro-CondMedium" ;
-    font-size:15px;
+    font-size:18px;
+    color: rgb(48,54,61);
+}
+
+p{
+    font-family:"DINPro-CondMedium" ;
+    font-size:18px;
     color: rgb(48,54,61);
 }
 
